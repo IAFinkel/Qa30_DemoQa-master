@@ -12,15 +12,16 @@ public class Student {
     String email;
     Gender gender;
     String mobileNumber;
-    String dateOfBirth;
+    String birthday;
     String subjects;
 
-    Boolean hobbieSport;
-    Boolean hobbieReading;
-    Boolean hobbieMusic;
+//    Boolean hobbieSport;
+//    Boolean hobbieReading;
+//    Boolean hobbieMusic;
 
+    String hobbie;
     String currentAdress;
-    String state;
+    State state;
     String city;
 
     public enum Gender{
@@ -28,5 +29,12 @@ public class Student {
         FEMALE,
         OTHER;
     }
+    public enum State{
+        NCR,
+        UttarPradesh,
+        Haryana,
+        Rajasthan;
+    }
+
 
 }
