@@ -1,10 +1,7 @@
 package manager;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import models.Student;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
@@ -195,9 +192,13 @@ public class StudentHelper extends HelperBase {
 
     public void selectCity(String city) {
         WebElement element = wd.findElement(By.xpath("//div[contains(text(),'Select City')]"));
-        Actions act = new Actions(wd);
-        act.moveToElement(element).click().sendKeys(city).sendKeys(Keys.ENTER).perform();
+//        Actions act = new Actions(wd);
+//        act.moveToElement(element).click().sendKeys(city).sendKeys(Keys.ENTER).perform();
+        new Actions(wd).sendKeys(element,city).sendKeys(Keys.ENTER).perform();
 
+        Dimension dimension = wd.manage().window().getSize();//определение размера экрана
+        System.out.println(dimension.getHeight()+dimension.getWidth());//распечатать высоту и ширину
+        scroll(0,400);
     }
 
 }
