@@ -12,6 +12,7 @@ public class ApplicationManager {
     AlertHelper alert;
     StudentHelper studentHelper;
     ActionHelper action;
+    BrokenLinksSearchHelper brokenLinksSearchHelper;
 
     public void init() {
         wd = new ChromeDriver();
@@ -22,6 +23,7 @@ public class ApplicationManager {
         alert = new AlertHelper(wd);
         studentHelper = new StudentHelper(wd);
         action = new ActionHelper(wd);
+        brokenLinksSearchHelper = new BrokenLinksSearchHelper(wd);
 
         alert.hideFooter();
 
@@ -40,5 +42,8 @@ public class ApplicationManager {
     }
 
     public ActionHelper action() {return action;
+    }
+    public BrokenLinksSearchHelper brokenLinksSearchHelper(){
+        return brokenLinksSearchHelper;
     }
 }

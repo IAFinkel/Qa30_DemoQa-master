@@ -18,4 +18,5 @@ public class AlertHelper extends HelperBase{
         hideFooter();
         click(By.xpath("//span[text()='Alerts']"));
     }
+
 }
